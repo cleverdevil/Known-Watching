@@ -24,13 +24,24 @@
                     }
                 ?>
                 <h2>
+                    <?php
+                    if ($vars['object']->watchType == 'movie') {
+                    ?>
+                    <i class="fa fa-film"></i>
+                    <?php
+                    } else if ($vars['object']->watchType == 'tv') {
+                    ?>
+                    <i class="fa fa-desktop"></i>
+                    <?php
+                    }
+                    ?>
                     Watched <span class="p-name"><?= htmlentities(strip_tags($vars['object']->getTitle()), ENT_QUOTES, 'UTF-8'); ?></span>
                 </h2>
             </div>
             <div class="e-content">
                 <?= $this->__(['value' => $vars['object']->body, 'object' => $vars['object']])->draw('forms/output/richtext'); ?>
                 
-                <p style="font-style: italic">Watched on <?= $vars['object']->getPlayer() ?></p>
+                <p style="font-style: italic; text-align: right;">Watched on <?= $vars['object']->getPlayer() ?></p>
             </div>
             
             <div style="display: none;">
