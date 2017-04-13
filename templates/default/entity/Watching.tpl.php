@@ -34,8 +34,16 @@
                     <i class="fa fa-desktop"></i>
                     <?php
                     }
+                    if (empty($vars['object']->getMediaURL())) {
                     ?>
                     Watched <span class="p-name"><?= htmlentities(strip_tags($vars['object']->getTitle()), ENT_QUOTES, 'UTF-8'); ?></span>
+                    <?php
+                    } else {
+                    ?>
+                    Watched <a href="<?= $vars['object']->getMediaURL() ?>" class="p-name"><?= htmlentities(strip_tags($vars['object']->getTitle()), ENT_QUOTES, 'UTF-8'); ?></a>
+                    <?php
+                    }
+                    ?>
                 </h2>
             </div>
             <div class="e-content">

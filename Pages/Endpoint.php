@@ -30,21 +30,32 @@
                     $watchType = '';
                     $player = $hook->Player->title;
                     $body = $hook->Metadata->summary;
-                    
+                    $mediaURL = '';
+
                     if ($hook->Metadata->type == 'movie')
                     {
                         $watchType = 'movie';
                         $title = $hook->Metadata->title;
+                        $guid = $hook->Metadata->guid;
+
+                        if (strpos($guid, 'imdb')) {
+                            $ident = explode('imdb://', $guid)[1];
+                            if (strpos('?', $ident)) {
+                                $ident = explode('?', $ident)[0];
+                            }
+                            $mediaURL = 'http://www.imdb.com/title/' . $ident;
+                        }
                     } else if ($hook->Metadata->type == 'episode')
                     {
                         $watchType = 'tv';
                         $title = $hook->Metadata->grandparentTitle . ", " . $hook->Metadata->parentTitle . " - " . $hook->Metadata->title;
                     }
-
+                    
                     $this->setInput('body', $body);
                     $this->setInput('title', $title);
                     $this->setInput('watchType', $watchType);
                     $this->setInput('player', $player);
+                    $this->setInput('mediaURL', $mediaURL);
                     
                     $_FILES['photo'] = $_FILES['thumb'];
 

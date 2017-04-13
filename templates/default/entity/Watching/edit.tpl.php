@@ -22,6 +22,11 @@
     } else {
         $watchType = $autosave->getValue('watching', 'watchType');
     }
+    if (!empty($vars['object']->mediaURL)) {
+        $mediaURL = $vars['object']->mediaURL;
+    } else {
+        $mediaURL = $autosave->getValue('watching', 'mediaURL');
+    }
     if (!empty($vars['object'])) {
         $object = $vars['object'];
     } else {
@@ -88,6 +93,9 @@
                     </style>
                     <label for="title">Title</label>
                     <input type="text" name="title" id="title" placeholder="The title of the movie or TV show you watched" value="<?= htmlspecialchars($title) ?>" class="form-control"/>                    
+                    
+                    <label for="title">Media Link</label>
+                    <input type="text" name="mediaURL" id="mediaURL" placeholder="Link to movie or TV show you watched, perhaps on IMDB" value="<?= htmlspecialchars($mediaURL) ?>" class="form-control"/>                    
                     
                     <!-- styled watch type -->
                     <label for="watchType">Movie or TV Show?</label>

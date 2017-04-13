@@ -34,7 +34,14 @@
 
                 return '';
             }
-            
+
+            function getMediaURL()
+            {
+                if (!empty($this->mediaURL)) return $this->mediaURL;
+
+                return '';
+            }
+
             function getURL()
             {
 
@@ -79,6 +86,7 @@
                     $this->title           = \Idno\Core\site()->currentPage()->getInput('title');
                     $this->player          = \Idno\Core\site()->currentPage()->getInput('player');
                     $this->watchType       = \Idno\Core\site()->currentPage()->getInput('watchType');
+                    $this->mediaURL        = \Idno\Core\site()->currentPage()->getInput('mediaURL');
                     $access                = \Idno\Core\site()->currentPage()->getInput('access');
                     $this->setAccess($access);
                     
