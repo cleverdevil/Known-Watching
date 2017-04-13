@@ -88,7 +88,7 @@
                         }
                     }
     
-                    if ($new) {
+                    if ($new || empty($this->getAttachments())) {
                         if (!empty($_FILES['photo']['tmp_name'])) {
                             if (\Idno\Entities\File::isImage($_FILES['photo']['tmp_name'])) {
                                 

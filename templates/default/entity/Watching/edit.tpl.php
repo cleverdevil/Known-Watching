@@ -58,7 +58,7 @@
 
                 <?php
 
-                    if (empty($vars['object']->_id)) {
+                    if (empty($vars['object']->_id) || empty($vars['object']->getAttachments())) {
 
                         ?>
                         <div id="photo-preview"></div>
