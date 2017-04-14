@@ -31,12 +31,12 @@
                     $player = $hook->Player->title;
                     $body = $hook->Metadata->summary;
                     $mediaURL = '';
+                    $guid = $hook->Metadata->guid;
 
                     if ($hook->Metadata->type == 'movie')
                     {
                         $watchType = 'movie';
                         $title = $hook->Metadata->title;
-                        $guid = $hook->Metadata->guid;
 
                         if (strpos($guid, 'imdb')) {
                             $ident = explode('imdb://', $guid)[1];
@@ -49,6 +49,11 @@
                     {
                         $watchType = 'tv';
                         $title = $hook->Metadata->grandparentTitle . ", " . $hook->Metadata->parentTitle . " - " . $hook->Metadata->title;
+                        
+                        if (strpos($guid, 'thetvdb')) {
+                            $ident = explode('/', explode('thetvdb://', $guid)[1])[0];
+                            $mediaURL = 'http://thetvdb.com/?tab=series&id=' . $ident;
+                        }
                     }
                     
                     $this->setInput('body', $body);
