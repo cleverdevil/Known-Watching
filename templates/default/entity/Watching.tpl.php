@@ -31,7 +31,7 @@
                     <?php
                     } else if ($vars['object']->watchType == 'tv') {
                     ?>
-                    <i class="fa fa-desktop"></i>
+                    <i class="fa fa-tv"></i>
                     <?php
                     }
                     if (empty($vars['object']->getMediaURL())) {
