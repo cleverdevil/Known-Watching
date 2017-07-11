@@ -48,8 +48,15 @@
             </div>
             <div class="e-content">
                 <?= $this->__(['value' => $vars['object']->body, 'object' => $vars['object']])->draw('forms/output/richtext'); ?>
-                
+
+                <?php
+                if (!empty($vars['object']->getPlayer())) {
+                ?>
                 <p style="font-style: italic; text-align: right;">Watched on <?= $vars['object']->getPlayer() ?></p>
+                <?php
+                }
+                ?>                
+
             </div>
             
             <div style="display: none;">
