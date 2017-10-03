@@ -65,7 +65,7 @@
             function getMetadataForFeed()
             {
                 return array(
-                    'type' => 'watching',
+                    'type' => 'entry',
                     'watch-type' => $this->getWatchType(),
                     'media-url' => $this->getMediaURL(),
                     'player' => $this->getPlayer()

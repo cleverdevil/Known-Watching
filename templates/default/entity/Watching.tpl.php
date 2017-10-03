@@ -1,6 +1,9 @@
 <article class="h-entry known-watching">
-            <div class="p-item h-product">
-                                
+            <h2 style="display: none" class="p-name">
+                Watched <?= htmlentities(strip_tags($vars['object']->getTitle()), ENT_QUOTES, 'UTF-8'); ?>
+            </h2>
+            
+            <div class="p-item h-product">                    
                 <?php
                     if ($attachments = $vars['object']->getAttachments()) {
                         foreach ($attachments as $attachment) {
