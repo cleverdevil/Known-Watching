@@ -1,4 +1,4 @@
-<article class="h-entry known-watching">
+<article class="known-watching">
             <h2 style="display: none" class="p-name">
                 Watched <?= htmlentities(strip_tags($vars['object']->getTitle()), ENT_QUOTES, 'UTF-8'); ?>
             </h2>
