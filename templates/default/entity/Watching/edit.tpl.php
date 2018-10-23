@@ -109,6 +109,7 @@
                                 <ul class="dropdown-menu">
                                     <li><a href="#" data-watchType="movie" class="watchType-option"><i class="fa fa-film"></i> Movie</a></li>
                                     <li><a href="#" data-watchType="tv" class="watchType-option"><i class="fa fa-tv"></i> TV Show</a></li>
+				    li><a href="#" data-watchType="video" class="watchType-option"><i class="fa fa-video"></i>Video</a></li>
                                 </ul>
                             </div>
                         </div>
