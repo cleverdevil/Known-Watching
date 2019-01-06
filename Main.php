@@ -10,7 +10,8 @@
                 \Idno\Core\site()->addPageHandler('/watching/delete/([A-Za-z0-9]+)/?', '\IdnoPlugins\Watching\Pages\Delete');
                 \Idno\Core\site()->addPageHandler('/watching/([A-Za-z0-9]+)/.*', '\Idno\Pages\Entity\View');
                 
-                \Idno\Core\site()->addPageHandler('/watching/webhook/', '\IdnoPlugins\Watching\Pages\Endpoint', true);
+                /*\Idno\Core\site()->addPageHandler('/watching/webhook/', '\IdnoPlugins\Watching\Pages\Endpoint', true);*/
+                /*\Idno\Core\site()->addPageHandler('/watching/trakt/', '\IdnoPlugins\Watching\Pages\TraktEndpoint', true);*/
             }
 
             /**

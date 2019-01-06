@@ -19,12 +19,14 @@
                 $payload = $this->getInput('payload');
                 $hook = json_decode($payload);
 
+                error_log($payload);
+
                 if ($hook->Account->id != 1)
                 {
                     exit();
                 }
 
-                if ($hook->event == 'media.play')
+                if ($hook->event == 'media.rate')
                 {
                     $title = '';
                     $watchType = '';
