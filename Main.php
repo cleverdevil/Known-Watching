@@ -5,13 +5,12 @@
         class Main extends \Idno\Common\Plugin {
 
             function registerPages() {
-                \Idno\Core\site()->addPageHandler('/watching/edit/?', '\IdnoPlugins\Watching\Pages\Edit');
-                \Idno\Core\site()->addPageHandler('/watching/edit/([A-Za-z0-9]+)/?', '\IdnoPlugins\Watching\Pages\Edit');
-                \Idno\Core\site()->addPageHandler('/watching/delete/([A-Za-z0-9]+)/?', '\IdnoPlugins\Watching\Pages\Delete');
-                \Idno\Core\site()->addPageHandler('/watching/([A-Za-z0-9]+)/.*', '\Idno\Pages\Entity\View');
-                
-                /*\Idno\Core\site()->addPageHandler('/watching/webhook/', '\IdnoPlugins\Watching\Pages\Endpoint', true);*/
-                /*\Idno\Core\site()->addPageHandler('/watching/trakt/', '\IdnoPlugins\Watching\Pages\TraktEndpoint', true);*/
+                \Idno\Core\site()->routes()->addRoute('/watching/edit/?', '\IdnoPlugins\Watching\Pages\Edit');
+                \Idno\Core\site()->routes()->addRoute('/watching/edit/([A-Za-z0-9]+)/?', '\IdnoPlugins\Watching\Pages\Edit');
+                \Idno\Core\site()->routes()->addRoute('/watching/delete/([A-Za-z0-9]+)/?', '\IdnoPlugins\Watching\Pages\Delete');
+                \Idno\Core\site()->routes()->addRoute('/watching/([A-Za-z0-9]+)/.*', '\Idno\Pages\Entity\View');
+                \Idno\Core\site()->routes()->addRoute('/watching/webhook/', '\IdnoPlugins\Watching\Pages\Endpoint', true);
+                \Idno\Core\site()->routes()->addRoute('/watching/trakt/', '\IdnoPlugins\Watching\Pages\TraktEndpoint', true);
             }
 
             /**
